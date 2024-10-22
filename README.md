@@ -58,8 +58,12 @@ Nous avons rassemblé quelques résultats intrigants issus des cinq catégories,
 # Commencer
 
 Aujourd'hui on va voir comment utiliser la Rape de l'atelier IA quoi là dedans ? On va déjà vérifier si vous avez tous le matériels à disposition. 
-Pour commencer, ils vous faut un ordi et de préférence l'ordinateur a titré à la rape IA. Pour que tous fonctionne correctement et au cas ou vous n'avez pas le bon ordinateur on va tous réinstaller pour etre sur.
+
+Pour commencer, ils vous faut un ordi et de préférence l'ordinateur a titré à la rape IA. 
+
+Pour que tous fonctionne correctement et au cas ou vous n'avez pas le bon ordinateur on va tous réinstaller pour etre sur.
 Donc sur le bureau de l'ordinateur vous devait avoir un premier fichier qui s'apelle "TROUBLEMAKER-screen" dans ce fichier vous aurez normalement 2 dossiers, ".vscode" et "TM-SCREEN".
+
 Vous devez aussi avoir tous ces fichiers là :
   - actions_verites.txt
   - aleatoire.txt
