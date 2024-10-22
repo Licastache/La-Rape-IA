@@ -65,6 +65,7 @@ Pour que tous fonctionne correctement et au cas ou vous n'avez pas le bon ordina
 Donc sur le bureau de l'ordinateur vous devait avoir un premier fichier qui s'apelle "TROUBLEMAKER-screen" dans ce fichier vous aurez normalement 2 dossiers, ".vscode" et "TM-SCREEN".
 
 Vous devez aussi avoir tous ces fichiers là :
+
   - actions_verites.txt
   - aleatoire.txt
   - citations_celebres.txt
@@ -77,4 +78,32 @@ Vous devez aussi avoir tous ces fichiers là :
   - Lexique code TM.txt
   - paramétrage_arduino.ino
   - rap.txt
-  - readme.md
+   
+Et dans le fichier TM-SCREEN :
+
+  - aleatoire.txt
+  - generer_phrase_boutonscreen.py
+  - Print_on_Screen.ino
+  - test.ino
+  - test.py
+
+Le second prerequis est d'avoir le logiciels VS CODE de microsoft. La version en ligne ne marche pas pensais à prendre la version PC. Une fois le logiciels télécharger vous allez devoir ouvrir le fichier complet TROUBLEMAKER-screen dans vscode. 
+
+![image](https://github.com/user-attachments/assets/6b73f5d3-aeb3-4279-b194-31227d2a4f55)
+
+Cliquer sur le fichier python sur la barre de droite. test.py
+
+![image](https://github.com/user-attachments/assets/da0bdb28-34a8-4c10-8d64-c57166d8d25e)
+
+Aller ensuite dans l'onglet extension pour télécharger l'extension Python à jour. 
+
+![image](https://github.com/user-attachments/assets/38493593-d5a6-4703-b4e4-4f212cb446c2)
+
+L'extension python et python debugger 
+
+![image](https://github.com/user-attachments/assets/3255505c-7770-447b-b679-064eda5d50b8)
+
+
+
+
+
