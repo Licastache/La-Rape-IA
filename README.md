@@ -137,6 +137,14 @@ cliquer sur téléverser
 
 ![image](https://github.com/user-attachments/assets/6cc422a0-06ad-43f2-a5cf-4f72e7454b93)
 
+Fermer ensuite le logiciel et réouvrer VSCODE
+
+Aller sur le code python et cliquer sur la flèche pour le lancer.
+
+Donc vous avez téléverser le code arduino sur la carte de la râpe. Vous avez ensuite lancer le code python depuis vscode. 
+
+Vous allez maintenant testé si tous fonctionne biencorrectement. est ce que vous pouvez chnager de mode de jeu, est ce que l'écran affiche bien les caractères (vous pouvez régler cela avec le deuxieme bouton rotatif)
+
 
 
 
