@@ -109,6 +109,8 @@ Si l'installation des modules python se sont bien passées vous devais normaleme
 
 ![image](https://github.com/user-attachments/assets/6b10f16c-7433-47ac-9071-a2181c7b7dbb)
 
+![image](https://github.com/user-attachments/assets/8e06b90f-a82c-4c1d-966e-6907da531463)
+
 Parfait ! Nous allons pour le moment laissez vscode de coté et nous allons passées à l'arduino.
 
 ### Configuration de l'arduino
@@ -116,6 +118,8 @@ Parfait ! Nous allons pour le moment laissez vscode de coté et nous allons pass
 Pour commencer vous allez télécharger la dernièrre version de l'application arduino sur le site. https://www.arduino.cc/en/software
 Une fois que tous est prêt vous allez ouvrir le fichier test.ino dans le dossier TM-SCREEN.
 Téléverser le fichier arduino sur la carte.
+
+
 
 
 
