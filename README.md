@@ -84,8 +84,10 @@ Et dans le fichier TM-SCREEN :
   - aleatoire.txt
   - generer_phrase_boutonscreen.py
   - Print_on_Screen.ino
-  - test.ino
   - test.py
+  - Dossier "test":
+     - test.ino
+  
 
 Le second prerequis est d'avoir le logiciels VS CODE de microsoft. La version en ligne ne marche pas pensais à prendre la version PC. Une fois le logiciels télécharger vous allez devoir ouvrir le fichier complet TROUBLEMAKER-screen dans vscode. 
 
@@ -116,7 +118,21 @@ Parfait ! Nous allons pour le moment laissez vscode de coté et nous allons pass
 ### Configuration de l'arduino
 
 Pour commencer vous allez télécharger la dernièrre version de l'application arduino sur le site. https://www.arduino.cc/en/software
-Une fois que tous est prêt vous allez ouvrir le fichier test.ino dans le dossier TM-SCREEN.
+Une fois que tous est prêt vous allez ouvrir le fichier test.ino dans le dossier TM-SCREEN>test.
+
+Vous devez donc vous retrouvez avec ceci (le visuel peut changer légèrement en fonction des versions de arduino)
+
+![image](https://github.com/user-attachments/assets/1c8ffd53-e3e6-4259-a112-43392707d776)
+
+Voici les boutons qui nous serviront le plus.
+
+![image](https://github.com/user-attachments/assets/03b3286a-fa17-438b-91e4-6e6bcb811252)
+
+//Pour commencer en haut de notre code (grand zone de texte en blanc) nous avons la ligne #include <LiquidCrystal.h> Cette ligne est très simple on va demander d'inclure la librairie (donc le fichier en .h) pour pouvoir comprendre le fonctionnement d'un écran à cristaux liquides (écran bleu des râpes). 
+
+Il faut maintenant vérifier que la librairie soit bien installée sur notre ordinateur. On va allez dans Croquis>inclure une bibliotheques et cliquer sur liquid crystal
+
+
 Téléverser le fichier arduino sur la carte.
 
 
