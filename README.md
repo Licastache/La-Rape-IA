@@ -128,12 +128,19 @@ Voici les boutons qui nous serviront le plus.
 
 ![image](https://github.com/user-attachments/assets/03b3286a-fa17-438b-91e4-6e6bcb811252)
 
-//Pour commencer en haut de notre code (grand zone de texte en blanc) nous avons la ligne #include <LiquidCrystal.h> Cette ligne est très simple on va demander d'inclure la librairie (donc le fichier en .h) pour pouvoir comprendre le fonctionnement d'un écran à cristaux liquides (écran bleu des râpes). 
 
-Il faut maintenant vérifier que la librairie soit bien installée sur notre ordinateur. On va allez dans Croquis>inclure une bibliotheques et cliquer sur liquid crystal
+Téléverser le fichier arduino sur la carte arduino pour commencer. brancher l'arduino grâce au cable bleu.
+
+![image](https://github.com/user-attachments/assets/5d6dbcb5-6930-4d89-b336-df88df35ebcf)
+
+cliquer sur téléverser
+
+![image](https://github.com/user-attachments/assets/6cc422a0-06ad-43f2-a5cf-4f72e7454b93)
 
 
-Téléverser le fichier arduino sur la carte.
+
+
+
 
 
 
