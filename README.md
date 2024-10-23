@@ -1,158 +1,75 @@
-# La-Rape-IA
+# Trouble Maker: A Truth or Dare generator based on Markov Chain
 
-La Rape est un gadget de jeu conçu pour résoudre le problème récurrent de manquer d'idées dans divers jeux, notamment Action ou Vérité. Il utilise une chaîne de Markov pour générer des propositions aléatoires, offrant une solution au défi de devoir continuellement trouver des idées astucieuses soi-même. Les propositions disponibles en ligne sont souvent limitées et répétitives, rendant difficile le maintien de l'intérêt du jeu à long terme. Avec La Rape, les joueurs peuvent profiter d'une variété infinie de suggestions nouvelles et divertissantes, améliorant ainsi l'expérience globale du jeu.
+By Vianney Dubourg and Valentin Baron. 
+Inspired by Yuqing Liang and Yibo Fu.
 
-Nous présentons une méthode innovante pour générer des idées en utilisant Markovify, un générateur d'apprentissage automatique simple basé sur les chaînes de Markov. Markovify prédit le mot suivant en fonction du mot précédent, plutôt que de toute la phrase. Cette limitation, où le modèle ne comprend pas vraiment le sens de chaque phrase, conduit à l'absurdité des propositions et renforce leur imprévisibilité. En incorporant une gamme diversifiée d'entrées, allant de l'absurde au sérieux, Markovify peut créer une multitude de défis pour les joueurs, allant au-delà de l'imagination humaine.
+### Introduction
 
-### Pourquoi utiliser une chaîne de Markov ?
+Trouble Maker is a game gadget designed to address the common pain point of running out of prompts in various games, especially Truth or Dare. It utilizes Markov Chain to generate random prompts, offering a solution to the challenge of continuously devising clever prompts yourself. The prompts available online are often limited and repetitive, making it difficult to keep the game engaging over time. With Trouble Maker, players can enjoy an endless array of fresh and entertaining prompts, enhancing the overall experience of the game.
 
-Une chaîne de Markov est un modèle stochastique qui génère des résultats aléatoires basés sur des probabilités. En génération de texte, un modèle de chaîne de Markov prédit le mot suivant en fonction du mot précédent. Contrairement aux modèles de génération de texte pré-entraînés comme GPT-3, les modèles de chaîne de Markov ont une compréhension très limitée du texte d'entrée, ce qui donne des résultats souvent incohérents. Cette absurdité inhérente rend les applications primitives de l'apprentissage automatique parfaitement adaptées à la nature ludique du jeu Action ou Vérité, démontrant que les "erreurs" de l'apprentissage automatique peuvent être divertissantes lorsqu'elles sont bien utilisées.
+We introduce a novel method for generating prompts using Markovify, a straightforward machine learning generator based on Markov Chains. Markovify predicts the next word based on the preceding word rather than the entire sentence. This limitation, where the model doesn't grasp the true meaning of each sentence, leads to the absurdity of the prompts and enhances their unpredictability. By incorporating a diverse range of inputs, from absurd to serious content, Markovify can create an endless array of challenges for players that stretch beyond human imagination.
 
-De plus, les modèles d'IA pré-entraînés sont complexes et gourmands en ressources, nécessitant une puissance de calcul importante et du matériel avancé. Ils mettent également plus de temps à s'entraîner et à s'exécuter, ce qui est peu pratique pour un outil de jeu. Malgré leur sophistication, ces modèles produisent toujours des résultats imprévisibles.
+### Why Markov Chain? 
 
-Markovify, étant un modèle plus simple et plus léger, est plus écologique et convivial. Pour la tâche simple de générer des propositions pour Action ou Vérité, Markovify est un choix supérieur en raison de son efficacité et de sa facilité d'utilisation.
+A Markov chain is a stochastic model that generates random results based on probability. In text generation, a Markov chain model predicts the next word based on the previous word. Unlike pre-trained text generation models like GPT-3, Markov Chain models have a very limited understanding of the input text, resulting in outputs that often make less sense. This inherent absurdity makes primitive ML applications a perfect match for the playful nature of the Truth or Dare game – demonstrating that "errors" in machine learning can be entertaining when used appropriately.
 
-### Entrée sélectionnée et tests
+Furthermore, pre-trained ML models are complex and resource-intensive, requiring significant computational power and advanced hardware. They also take longer to train and execute, which is impractical for a game tool. Despite their sophistication, these models still produce unpredictable results.
 
-Nous avons utilisé Markovify, un générateur de chaîne de Markov simple et extensible, pour produire des phrases basées sur des entrées utilisateur. Par exemple, si l'entrée est "Alice au pays des merveilles", la sortie pourrait ressembler à quelque chose comme « Alice pensa qu'elle ferait aussi bien de regarder et de voir ce qui n'allait pas avec ça », ce qui semble être une citation du livre mais est en réalité généré. Pour créer des défis, nous avons saisi des phrases ou instructions. Initialement, nous avons testé avec 260 propositions d'Action collectées sur des sites web. Les résultats étaient prometteurs, mais la taille limitée des entrées a conduit le modèle à simplement réorganiser les phrases selon les règles de la langue.
+Markovify, being a simpler and lighter model, is more environmentally friendly and user-friendly. For the straightforward task of generating Truth or Dare prompts, Markovify is a superior choice due to its efficiency and ease of use.
 
-Puisque les défis disponibles en ligne sont limités, nous avons élargi nos entrées à d'autres sources instructives pour créer des résultats plus variés et absurdes. Cette approche a non seulement augmenté l'absurdité des propositions mais a également amélioré la créativité de la machine.
 
-Nous avons catégorisé les entrées pour des scénarios spécifiques. Par exemple, une recette de cocktail générée aléatoirement à partir d'une liste de recettes peut être utilisée dans un bar, incitant les joueurs à commander des "boissons aventureuses" basées sur la recette générée. De même, une instruction d'exercice insensée peut servir de défi humoristique dans le jeu.
+### Why a Gadget? 
 
-Après des tests approfondis avec diverses combinaisons d'entrées, nous avons sélectionné huit sources d'entrées divisées en cinq catégories :
+We propose a small, hand-sized gadget equipped with a built-in thermal printer for generating each prompt. While there are numerous web-based or app-based tools for Truth or Dare and other party games, these screen-based tools often detract from the fun. They tend to divert players' attention to the electronic device, which can be disruptive due to incoming messages and notifications. A party game should foster real-life connections, whereas electronic devices typically do the opposite.
 
-  1- Action ou Vérité : Généré à partir de propositions d'Action et Vérité collectées sur internet.
-  2- Citations de rap : Sélectionnées sur internet avec ChatGPT.
-  3- Citations célèbres : Sélectionnées sur internet avec ChatGPT.
-  4- Textes aléatoires : Sélectionnés sur internet avec ChatGPT.
-  5- Noms et descriptions de dinosaures : Sélectionnés sur internet avec ChatGPT.
+Our gadget aims to offer a break from the overuse of electronics. By providing prompts printed on slips of paper, this device ensures that players remain fully engaged with the present moment and, more importantly, with each other.
 
-En utilisant Markovify avec ces entrées diverses et catégorisées, nous avons conçu une gamme de propositions créatives et divertissantes pour divers scénarios de jeu.
+### Selected input and testing
 
-### “Ajustements”
+We used Markovify, a simple and extensible Markov chain generator, to produce sentences based on user input. For example, if the input is "Alice in Wonderland," the output might be something like, “Alice thought she might as well look and see what was the matter with it,” which sounds like a quote from the book but is actually generated. To create Dares, we input instructive sentences or phrases. Initially, we tested with 260 Dare prompts collected from websites. The results were promising, but the limited input size led to the model merely reorganizing the input according to natural language rules.
 
-En raison de la nature imprévisible de l'apprentissage automatique et du principe de génération "immature" de notre modèle, les propositions générées ne font souvent pas complètement sens pour les humains. Le taux de réussite pour produire des phrases compréhensibles est inférieur à 50 % sans modifications supplémentaires. Nous avons donc mis en œuvre une série de procédures d'« ajustement » pour améliorer la qualité des sorties en ajoutant des contraintes afin de minimiser les phrases incohérentes ou erronées.
+Since available Dares online are limited, we expanded our input to other instructive sources to create more varied and absurd outputs. This approach not only increased the absurdity of the prompts but also enhanced the machine’s creativity.
 
-Nous avons modifié le script Python pour nettoyer le texte d'entrée, en supprimant les symboles et espaces inutiles spécifiques à chaque type d'entrée. Par exemple, les propositions d'Action sont souvent accompagnées de puces numérotées, et les recettes de cocktails contiennent de nombreux codes “\n” et “\r” dans le texte.
+We categorized inputs for specific scenarios. For instance, a randomly generated cocktail recipe from a list of recipes can be used in a bar, prompting players to order "adventurous drinks" based on the generated recipe. Similarly, a nonsensical workout instruction can serve as a humorous challenge in the game.
 
-Malgré ces ajustements, nous ne pouvons garantir que 100 % des propositions générées seront compréhensibles, même après ajustement. De plus, avec une entrée suffisamment large, les résultats peuvent varier considérablement, et il est difficile de prédire si la même proposition sera générée à nouveau. Il devrait donc y avoir une marge d'erreur de 10 à 26 %, selon les catégories d'entrée.
+After extensive testing with various combined inputs, we selected eight input sources divided into five categories:
 
-### Résultats générés - Exemples
+  1- Truth or Dare: Generated from truth and dare prompts collected from the internet.
+  2- Rap quotes: Selected on the Internet with ChatGPT.
+  3- Famous quotes: Selected on the Internet with ChatGPT.
+  4- Random text: Selected on the Internet with ChatGPT.
+  5- Dinosaur's names/descriptions: Selected on the Internet with ChatGPT.
 
-De notre analyse, il est évident que les défis Action ou Vérité, les noms de dinosaures, et les citations de rap produisent des résultats particulièrement réussis. Markovify transforme efficacement des entrées sérieuses en propositions absurdes dans ces catégories.
+By using Markovify with these diverse and categorized inputs, we crafted a range of creative and entertaining prompts for various game scenarios.
 
-Pour les défis traditionnels générés à partir des propositions collectées en ligne, la machine tente de réorganiser les entrées limitées pour générer de nouvelles phrases, avec des degrés de succès variables.
+### “Fine tuning”
 
-Nous avons rassemblé quelques résultats intrigants issus des cinq catégories, illustrant la diversité et la créativité des propositions générées.
+Due to the unpredictable nature of machine learning and the 'immature' generating principle of our model, the generated output prompts often do not make complete sense to humans. The success rate for producing understandable sentences is below 50% without further modifications. Therefore, we implemented a series of "fine-tuning" procedures to enhance the quality of the output by adding constraints to minimize nonsensical or erroneous sentences.
 
-#### Différents jeux :
+We modified the Python script to clean up the input text, removing unnecessary symbols and spaces specific to each input type. For example, truth inputs often come with numbered bullets, and cocktail recipes contain many “\n” and “\r” codes within the text.
 
-  - Action ou Vérité
-  - Citations de rap
-  - Citations célèbres
-  - Textes aléatoires
-  - Nom de dinosaures
-  - Description de dinosaures
+Despite these adjustments, we cannot guarantee that 100% of the generated prompts will be understandable, even after fine-tuning. Additionally, with a large enough input, the results can vary widely, and it’s difficult to predict if the same prompt will be generated again. Consequently, there should be a fault tolerance rate of 10-26%, depending on the input categories.
 
-# Commencer
+### Generated results Showcase
 
-Aujourd'hui on va voir comment utiliser la Rape de l'atelier IA quoi là dedans ? On va déjà vérifier si vous avez tous le matériels à disposition. 
+From our analysis, it's evident that the Truth or Dare challenges, dinosaur names, and rap quotes yield particularly successful results. Markovify effectively transforms serious input into absurd prompts in these categories.
 
-Pour commencer, ils vous faut un ordi et de préférence l'ordinateur a titré à la rape IA. 
+For traditional dares generated from collected prompts online, the machine attempts to reorganize the limited input to generate new sentences, albeit with varying degrees of success.
 
-Pour que tous fonctionne correctement et au cas ou vous n'avez pas le bon ordinateur on va tous réinstaller pour etre sur.
-Donc sur le bureau de l'ordinateur vous devait avoir un premier fichier qui s'apelle "TROUBLEMAKER-screen" dans ce fichier vous aurez normalement 2 dossiers, ".vscode" et "TM-SCREEN".
+We've gathered some intriguing results from all five categories, showcasing the diversity and creativity of the generated prompts.
 
-Vous devez aussi avoir tous ces fichiers là :
-
-  - actions_verites.txt
-  - aleatoire.txt
-  - citations_celebres.txt
-  - combo.txt
-  - dinosaures_descriptions.txt
-  - dinosaures_noms.txt
-  - donnees_participants.txt
-  - generer_phrase_basique.py
-  - generer_phrase_bouton.py
-  - Lexique code TM.txt
-  - paramétrage_arduino.ino
-  - rap.txt
-   
-Et dans le fichier TM-SCREEN :
-
-  - aleatoire.txt
-  - generer_phrase_boutonscreen.py
-  - Print_on_Screen.ino
-  - test.py
-  - Dossier "test":
-     - test.ino
+#### Different games:
   
-
-Le second prerequis est d'avoir le logiciels VS CODE de microsoft. La version en ligne ne marche pas pensais à prendre la version PC. Une fois le logiciels télécharger vous allez devoir ouvrir le fichier complet TROUBLEMAKER-screen dans vscode. 
-
-![image](https://github.com/user-attachments/assets/6b73f5d3-aeb3-4279-b194-31227d2a4f55)
-
-Cliquer sur le fichier python sur la barre de droite. test.py
-
-![image](https://github.com/user-attachments/assets/da0bdb28-34a8-4c10-8d64-c57166d8d25e)
-
-Aller ensuite dans l'onglet extension pour télécharger l'extension Python à jour. 
-
-![image](https://github.com/user-attachments/assets/38493593-d5a6-4703-b4e4-4f212cb446c2)
-
-L'extension python et python debugger 
-
-![image](https://github.com/user-attachments/assets/3255505c-7770-447b-b679-064eda5d50b8)
-
-Ensuite vous allez devoir ouvrir tous les fichiers .txt dans des onglets pour que tous le code fonctionne.
-
-Si l'installation des modules python se sont bien passées vous devais normalement avoir cette flèche quie s'est rajouté dans le coin en haut à droite.
-
-![image](https://github.com/user-attachments/assets/6b10f16c-7433-47ac-9071-a2181c7b7dbb)
-
-![image](https://github.com/user-attachments/assets/8e06b90f-a82c-4c1d-966e-6907da531463)
-
-Parfait ! Nous allons pour le moment laissez vscode de coté et nous allons passées à l'arduino.
-
-### Configuration de l'arduino
-
-Pour commencer vous allez télécharger la dernièrre version de l'application arduino sur le site. https://www.arduino.cc/en/software
-Une fois que tous est prêt vous allez ouvrir le fichier test.ino dans le dossier TM-SCREEN>test.
-
-Vous devez donc vous retrouvez avec ceci (le visuel peut changer légèrement en fonction des versions de arduino)
-
-![image](https://github.com/user-attachments/assets/1c8ffd53-e3e6-4259-a112-43392707d776)
-
-Voici les boutons qui nous serviront le plus.
-
-![image](https://github.com/user-attachments/assets/03b3286a-fa17-438b-91e4-6e6bcb811252)
-
-
-Téléverser le fichier arduino sur la carte arduino pour commencer. brancher l'arduino grâce au cable bleu.
-
-![image](https://github.com/user-attachments/assets/5d6dbcb5-6930-4d89-b336-df88df35ebcf)
-
-cliquer sur téléverser
-
-![image](https://github.com/user-attachments/assets/6cc422a0-06ad-43f2-a5cf-4f72e7454b93)
-
-Fermer ensuite le logiciel et réouvrer VSCODE
-
-Aller sur le code python et cliquer sur la flèche pour le lancer.
-
-Donc vous avez téléverser le code arduino sur la carte de la râpe. Vous avez ensuite lancer le code python depuis vscode. 
-
-Vous allez maintenant testé si tous fonctionne biencorrectement. est ce que vous pouvez chnager de mode de jeu, est ce que l'écran affiche bien les caractères (vous pouvez régler cela avec le deuxieme bouton rotatif)
-
-
-
-
-
-
-
-
-
-
+  Truth or Dare
+  
+  Rap quotes
+  
+  Famous quotes
+  
+  Random text
+  
+  Dinosaur's name
+  
+  Dinosaur's description
 
 
