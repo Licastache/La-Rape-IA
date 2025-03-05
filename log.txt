@@ -1,0 +1,340 @@
+Microsoft Windows [version 10.0.19045.5487]
+(c) Microsoft Corporation. Tous droits réservés.
+
+C:\Users\PC\Desktop\TM-SCREEN>where python
+C:\Users\PC\AppData\Local\Programs\Python\Python313\python.exe
+C:\Users\PC\AppData\Local\Microsoft\WindowsApps\python.exe
+
+C:\Users\PC\Desktop\TM-SCREEN>python -m venv env
+
+C:\Users\PC\Desktop\TM-SCREEN>env\Scripts\activate
+
+(env) C:\Users\PC\Desktop\TM-SCREEN>dir
+ Le volume dans le lecteur C s’appelle Windows
+ Le numéro de série du volume est 0A83-1FBA
+
+ Répertoire de C:\Users\PC\Desktop\TM-SCREEN
+
+19/02/2025  10:53    <DIR>          .
+19/02/2025  10:53    <DIR>          ..
+12/06/2024  04:31             3 980 actions_verites.txt
+12/06/2024  04:31             4 576 aleatoire.txt
+19/02/2025  10:52    <DIR>          arduino
+12/06/2024  04:31             3 821 citations_celebres.txt
+12/06/2024  04:31                 6 combo.txt
+12/06/2024  04:31            12 106 dinosaures_descriptions.txt
+12/06/2024  04:31               850 dinosaures_noms.txt
+12/06/2024  04:31                29 donnees_participants.txt
+19/02/2025  10:53    <DIR>          env
+19/02/2025  10:52    <DIR>          Nouveau dossier
+19/02/2025  10:41               904 Python.py
+12/06/2024  04:31             5 098 rap.txt
+               9 fichier(s)           31 370 octets
+               5 Rép(s)  218 925 240 320 octets libres
+
+(env) C:\Users\PC\Desktop\TM-SCREEN>mv Python.py markov.py
+'mv' n’est pas reconnu en tant que commande interne
+ou externe, un programme exécutable ou un fichier de commandes.
+
+(env) C:\Users\PC\Desktop\TM-SCREEN>dir
+ Le volume dans le lecteur C s’appelle Windows
+ Le numéro de série du volume est 0A83-1FBA
+
+ Répertoire de C:\Users\PC\Desktop\TM-SCREEN
+
+19/02/2025  10:55    <DIR>          .
+19/02/2025  10:55    <DIR>          ..
+12/06/2024  04:31             3 980 actions_verites.txt
+12/06/2024  04:31             4 576 aleatoire.txt
+19/02/2025  10:52    <DIR>          arduino
+12/06/2024  04:31             3 821 citations_celebres.txt
+12/06/2024  04:31                 6 combo.txt
+12/06/2024  04:31            12 106 dinosaures_descriptions.txt
+12/06/2024  04:31               850 dinosaures_noms.txt
+12/06/2024  04:31                29 donnees_participants.txt
+19/02/2025  10:53    <DIR>          env
+19/02/2025  10:41               904 markov.py
+19/02/2025  10:52    <DIR>          Nouveau dossier
+12/06/2024  04:31             5 098 rap.txt
+               9 fichier(s)           31 370 octets
+               5 Rép(s)  218 924 838 912 octets libres
+
+(env) C:\Users\PC\Desktop\TM-SCREEN>python markov.py
+Traceback (most recent call last):
+  File "C:\Users\PC\Desktop\TM-SCREEN\markov.py", line 1, in <module>
+    import serial
+ModuleNotFoundError: No module named 'serial'
+
+(env) C:\Users\PC\Desktop\TM-SCREEN>pip install serial
+Collecting serial
+  Using cached serial-0.0.97-py2.py3-none-any.whl.metadata (889 bytes)
+Collecting future>=0.17.1 (from serial)
+  Using cached future-1.0.0-py3-none-any.whl.metadata (4.0 kB)
+Collecting pyyaml>=3.13 (from serial)
+  Using cached PyYAML-6.0.2-cp313-cp313-win_amd64.whl.metadata (2.1 kB)
+Collecting iso8601>=0.1.12 (from serial)
+  Using cached iso8601-2.1.0-py3-none-any.whl.metadata (3.7 kB)
+Using cached serial-0.0.97-py2.py3-none-any.whl (40 kB)
+Using cached future-1.0.0-py3-none-any.whl (491 kB)
+Using cached iso8601-2.1.0-py3-none-any.whl (7.5 kB)
+Using cached PyYAML-6.0.2-cp313-cp313-win_amd64.whl (156 kB)
+Installing collected packages: pyyaml, iso8601, future, serial
+Successfully installed future-1.0.0 iso8601-2.1.0 pyyaml-6.0.2 serial-0.0.97
+
+[notice] A new release of pip is available: 24.3.1 -> 25.0.1
+[notice] To update, run: python.exe -m pip install --upgrade pip
+
+(env) C:\Users\PC\Desktop\TM-SCREEN>python markov.py
+Traceback (most recent call last):
+  File "C:\Users\PC\Desktop\TM-SCREEN\markov.py", line 5, in <module>
+    ser = serial.Serial('COM3', 9600)
+          ^^^^^^^^^^^^^
+AttributeError: module 'serial' has no attribute 'Serial'
+
+(env) C:\Users\PC\Desktop\TM-SCREEN>pip uninstall serial
+Found existing installation: serial 0.0.97
+Uninstalling serial-0.0.97:
+  Would remove:
+    c:\users\pc\desktop\tm-screen\env\lib\site-packages\serial-0.0.97.dist-info\*
+    c:\users\pc\desktop\tm-screen\env\lib\site-packages\serial\*
+Proceed (Y/n)? y
+  Successfully uninstalled serial-0.0.97
+
+(env) C:\Users\PC\Desktop\TM-SCREEN>pip install pyserial
+Collecting pyserial
+  Downloading pyserial-3.5-py2.py3-none-any.whl.metadata (1.6 kB)
+Downloading pyserial-3.5-py2.py3-none-any.whl (90 kB)
+Installing collected packages: pyserial
+Successfully installed pyserial-3.5
+
+[notice] A new release of pip is available: 24.3.1 -> 25.0.1
+[notice] To update, run: python.exe -m pip install --upgrade pip
+
+(env) C:\Users\PC\Desktop\TM-SCREEN>python markov.py
+Traceback (most recent call last):
+  File "C:\Users\PC\Desktop\TM-SCREEN\markov.py", line 37, in <module>
+    envoyer_phrase(base_index)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\TM-SCREEN\markov.py", line 26, in envoyer_phrase
+    import markovify
+ModuleNotFoundError: No module named 'markovify'
+
+(env) C:\Users\PC\Desktop\TM-SCREEN>pip install markovify
+Collecting markovify
+  Downloading markovify-0.9.4.tar.gz (27 kB)
+  Installing build dependencies ... done
+  Getting requirements to build wheel ... done
+  Preparing metadata (pyproject.toml) ... done
+Collecting unidecode (from markovify)
+  Downloading Unidecode-1.3.8-py3-none-any.whl.metadata (13 kB)
+Downloading Unidecode-1.3.8-py3-none-any.whl (235 kB)
+Building wheels for collected packages: markovify
+  Building wheel for markovify (pyproject.toml) ... done
+  Created wheel for markovify: filename=markovify-0.9.4-py3-none-any.whl size=18704 sha256=0ebbd3c878a1f3973859d91316198c7b7a966b3f449c78f170b18dcb840d5f45
+  Stored in directory: c:\users\pc\appdata\local\pip\cache\wheels\00\8f\53\2cef92a9deed47e94cc00012805a154cfb161355d0761b1d79
+Successfully built markovify
+Installing collected packages: unidecode, markovify
+Successfully installed markovify-0.9.4 unidecode-1.3.8
+
+[notice] A new release of pip is available: 24.3.1 -> 25.0.1
+[notice] To update, run: python.exe -m pip install --upgrade pip
+
+(env) C:\Users\PC\Desktop\TM-SCREEN>python markov.py
+Traceback (most recent call last):
+  File "C:\Users\PC\Desktop\TM-SCREEN\markov.py", line 37, in <module>
+    envoyer_phrase(base_index)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\TM-SCREEN\markov.py", line 30, in envoyer_phrase
+    phrase = ' '.join(phrase.split())
+                      ^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'split'
+
+(env) C:\Users\PC\Desktop\TM-SCREEN>python markov.py
+None
+Traceback (most recent call last):
+  File "C:\Users\PC\Desktop\TM-SCREEN\markov.py", line 38, in <module>
+    envoyer_phrase(base_index)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\TM-SCREEN\markov.py", line 31, in envoyer_phrase
+    phrase = ' '.join(phrase.split())
+                      ^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'split'
+
+(env) C:\Users\PC\Desktop\TM-SCREEN>python markov.py
+Dinosaure a long cou et une petite tete et des pattes robustes pour soutenir son poids.
+Traceback (most recent call last):
+  File "C:\Users\PC\Desktop\TM-SCREEN\markov.py", line 39, in <module>
+    time.sleep(10)
+    ~~~~~~~~~~^^^^
+KeyboardInterrupt
+^C
+(env) C:\Users\PC\Desktop\TM-SCREEN>
+
+(env) C:\Users\PC\Desktop\TM-SCREEN>
+
+(env) C:\Users\PC\Desktop\TM-SCREEN>
+
+(env) C:\Users\PC\Desktop\TM-SCREEN>python markov.py
+Traceback (most recent call last):
+  File "C:\Users\PC\Desktop\TM-SCREEN\markov.py", line 38, in <module>
+    if ser.in_waiting > 0:
+       ^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\TM-SCREEN\env\Lib\site-packages\serial\serialwin32.py", line 258, in in_waiting
+    if not win32.ClearCommError(self._port_handle, ctypes.byref(flags), ctypes.byref(comstat)):
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+^C
+(env) C:\Users\PC\Desktop\TM-SCREEN>
+
+(env) C:\Users\PC\Desktop\TM-SCREEN>python markov.py
+Traceback (most recent call last):
+  File "C:\Users\PC\Desktop\TM-SCREEN\markov.py", line 40, in <module>
+    envoyer_phrase(base_index)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\TM-SCREEN\markov.py", line 27, in envoyer_phrase
+    modele = markovify.Text(texte)
+  File "C:\Users\PC\Desktop\TM-SCREEN\env\Lib\site-packages\markovify\text.py", line 65, in __init__
+    self.chain = chain or Chain(self.parsed_sentences, state_size)
+                          ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\TM-SCREEN\env\Lib\site-packages\markovify\chain.py", line 53, in __init__
+    self.precompute_begin_state()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\PC\Desktop\TM-SCREEN\env\Lib\site-packages\markovify\chain.py", line 102, in precompute_begin_state
+    choices, cumdist = compile_next(self.model[begin_state])
+                                    ~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: ('___BEGIN__', '___BEGIN__')
+
+(env) C:\Users\PC\Desktop\TM-SCREEN>python markov.py
+ya pas de phrase connard!
+Traceback (most recent call last):
+  File "C:\Users\PC\Desktop\TM-SCREEN\markov.py", line 40, in <module>
+    envoyer_phrase(base_index)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\TM-SCREEN\markov.py", line 34, in envoyer_phrase
+    ser.write((phrase + ' ').encode('utf-8'))
+               ~~~~~~~^~~~~
+TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'
+
+(env) C:\Users\PC\Desktop\TM-SCREEN>python markov.py
+Traceback (most recent call last):
+  File "C:\Users\PC\Desktop\TM-SCREEN\markov.py", line 39, in <module>
+    envoyer_phrase(base_index)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\TM-SCREEN\markov.py", line 31, in envoyer_phrase
+    phrase = ' '.join(phrase.split())
+                      ^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'split'
+
+(env) C:\Users\PC\Desktop\TM-SCREEN>python markov.py
+Traceback (most recent call last):
+  File "C:\Users\PC\Desktop\TM-SCREEN\markov.py", line 39, in <module>
+    envoyer_phrase(base_index)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\TM-SCREEN\markov.py", line 31, in envoyer_phrase
+    phrase = ' '.join(phrase.split())
+                      ^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'split'
+
+(env) C:\Users\PC\Desktop\TM-SCREEN>mv Python.py markov.py
+'mv' n’est pas reconnu en tant que commande interne
+ou externe, un programme exécutable ou un fichier de commandes.
+
+(env) C:\Users\PC\Desktop\TM-SCREEN>python markov.py
+Traceback (most recent call last):
+  File "C:\Users\PC\Desktop\TM-SCREEN\markov.py", line 39, in <module>
+    envoyer_phrase(base_index)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\TM-SCREEN\markov.py", line 31, in envoyer_phrase
+    phrase = ' '.join(phrase.split())
+                      ^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'split'
+
+(env) C:\Users\PC\Desktop\TM-SCREEN>python markov.py
+None
+Traceback (most recent call last):
+  File "C:\Users\PC\Desktop\TM-SCREEN\markov.py", line 38, in <module>
+    envoyer_phrase(base_index)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\TM-SCREEN\markov.py", line 31, in envoyer_phrase
+    phrase = ' '.join(phrase.split())
+                      ^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'split'
+
+(env) C:\Users\PC\Desktop\TM-SCREEN>python markov.py
+Le bonheur n'est pas l'absence de peur, mais la perseverance, qui fait les grandes oeuvres.
+Euo plo ce pha lo sau rus.
+Traceback (most recent call last):
+  File "C:\Users\PC\Desktop\TM-SCREEN\markov.py", line 39, in <module>
+    time.sleep(10)
+    ~~~~~~~~~~^^^^
+KeyboardInterrupt
+^C
+(env) C:\Users\PC\Desktop\TM-SCREEN>
+
+(env) C:\Users\PC\Desktop\TM-SCREEN>
+
+(env) C:\Users\PC\Desktop\TM-SCREEN>
+
+(env) C:\Users\PC\Desktop\TM-SCREEN>
+
+(env) C:\Users\PC\Desktop\TM-SCREEN>
+
+(env) C:\Users\PC\Desktop\TM-SCREEN>pip freeze
+future==1.0.0
+iso8601==2.1.0
+markovify==0.9.4
+pyserial==3.5
+PyYAML==6.0.2
+Unidecode==1.3.8
+
+(env) C:\Users\PC\Desktop\TM-SCREEN>pip freeze > requirements.txt
+
+(env) C:\Users\PC\Desktop\TM-SCREEN>deactivate
+C:\Users\PC\Desktop\TM-SCREEN>python -m venv env
+
+C:\Users\PC\Desktop\TM-SCREEN>env\Scripts\activate
+
+(env) C:\Users\PC\Desktop\TM-SCREEN>pip install -r requirements.txt
+Collecting future==1.0.0 (from -r requirements.txt (line 1))
+  Using cached future-1.0.0-py3-none-any.whl.metadata (4.0 kB)
+Collecting iso8601==2.1.0 (from -r requirements.txt (line 2))
+  Using cached iso8601-2.1.0-py3-none-any.whl.metadata (3.7 kB)
+Collecting markovify==0.9.4 (from -r requirements.txt (line 3))
+  Using cached markovify-0.9.4-py3-none-any.whl
+Collecting pyserial==3.5 (from -r requirements.txt (line 4))
+  Using cached pyserial-3.5-py2.py3-none-any.whl.metadata (1.6 kB)
+Collecting PyYAML==6.0.2 (from -r requirements.txt (line 5))
+  Using cached PyYAML-6.0.2-cp313-cp313-win_amd64.whl.metadata (2.1 kB)
+Collecting Unidecode==1.3.8 (from -r requirements.txt (line 6))
+  Using cached Unidecode-1.3.8-py3-none-any.whl.metadata (13 kB)
+Using cached future-1.0.0-py3-none-any.whl (491 kB)
+Using cached iso8601-2.1.0-py3-none-any.whl (7.5 kB)
+Using cached pyserial-3.5-py2.py3-none-any.whl (90 kB)
+Using cached PyYAML-6.0.2-cp313-cp313-win_amd64.whl (156 kB)
+Using cached Unidecode-1.3.8-py3-none-any.whl (235 kB)
+Installing collected packages: pyserial, Unidecode, PyYAML, iso8601, future, markovify
+Successfully installed PyYAML-6.0.2 Unidecode-1.3.8 future-1.0.0 iso8601-2.1.0 markovify-0.9.4 pyserial-3.5
+
+[notice] A new release of pip is available: 24.3.1 -> 25.0.1
+[notice] To update, run: python.exe -m pip install --upgrade pip
+
+(env) C:\Users\PC\Desktop\TM-SCREEN>python markov.py
+Spi no sau rus Rex.
+Traceback (most recent call last):
+  File "C:\Users\PC\Desktop\TM-SCREEN\markov.py", line 36, in <module>
+    if ser.in_waiting > 0:
+       ^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\TM-SCREEN\env\Lib\site-packages\serial\serialwin32.py", line 258, in in_waiting
+    if not win32.ClearCommError(self._port_handle, ctypes.byref(flags), ctypes.byref(comstat)):
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+^C
+(env) C:\Users\PC\Desktop\TM-SCREEN>
+
+(env) C:\Users\PC\Desktop\TM-SCREEN>
+
+(env) C:\Users\PC\Desktop\TM-SCREEN>history
+'history' n’est pas reconnu en tant que commande interne
+ou externe, un programme exécutable ou un fichier de commandes.
+
+(env) C:\Users\PC\Desktop\TM-SCREEN>
