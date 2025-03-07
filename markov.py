@@ -41,7 +41,7 @@ def envoyer_phrase(base_index):
         texte = charger_donnees(base_choisie)
 
         if texte == "":
-            print("Le fichier est vide ou il y a eu une erreur lors de son chargement. Impossible de générer une phrase.")
+            print("Le fichier est vide ou il y a eu une erreur lors de son chargement. Impossible de générer une phrase. Essayer de relancer la génération après quelque seconde.")
             return
 
         modele = markovify.Text(texte)
@@ -52,7 +52,7 @@ def envoyer_phrase(base_index):
             ser.write((phrase + ' ').encode('utf-8'))
             time.sleep(1)
         else:
-            print("Impossible de générer une phrase avec le modèle Markov.")
+            print("Impossible de générer une phrase avec le modèle Markov. Essayer de relancer la génération après quelque seconde.")
     except Exception as e:
         print(f"Erreur lors de l'envoi de la phrase : {e}")
 
