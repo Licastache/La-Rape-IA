@@ -7,7 +7,7 @@ import markovify
 try:
     ser = serial.Serial('COM3', 9600)
     ser.flush()
-    print("Connexion série établie avec succès.---------------------------------------------------")
+    print("Connexion série établie avec succès entre l'ordinateur et la Râpe.---------------------------------------------------")
 except serial.SerialException as e:
     print(f"Erreur de connexion série : {e}")
     exit(1)
