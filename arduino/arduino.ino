@@ -24,6 +24,7 @@ void loop() {
   digitalWrite(9, HIGH); // Allumage led ROUGE
   
   int sensorValue = analogRead(potentiometerPin);
+  sensorValue = constrain(sensorValue, 0, 1022); // Contrainte pour éviter les valeurs extrêmes
 
   // Sélectionner la base de données en fonction de la valeur du potentiomètre
   if (!selectionValidee) {
