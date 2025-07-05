@@ -1,75 +1,97 @@
 #include <LiquidCrystal.h>
+#include <Bounce2.h>
 
-// Initialisation de l'écran LCD (broches en fonction de votre configuration)
+// Initialisation de l'écran LCD
 LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
 
-// Broches utilisées pour le potentiomètre et le bouton
+// Broches
 const int potentiometerPin = A0;
 const int buttonPin = 8;
+const int ledRouge = 9;
+const int ledVerte = 7;
+const int ledOrange = 6;
+
+Bounce debouncer = Bounce();
 
 int currentBase = 0;
+int lastBase = -1;
 bool selectionValidee = false;
 
 void setup() {
   Serial.begin(9600);
-  lcd.begin(16, 2);  // Initialisation de l'écran avec 16 colonnes et 2 lignes
-  pinMode(buttonPin, INPUT_PULLUP);  // Bouton configuré en mode pull-up
-  pinMode(7, OUTPUT);
-  pinMode(6, OUTPUT);
-  pinMode(9, OUTPUT);
+  lcd.begin(16, 2);
+
+  pinMode(ledRouge, OUTPUT);
+  pinMode(ledVerte, OUTPUT);
+  pinMode(ledOrange, OUTPUT);
+  digitalWrite(ledRouge, HIGH);
+  digitalWrite(ledOrange, LOW);
+  digitalWrite(ledVerte, LOW);
+
+  debouncer.attach(buttonPin, INPUT_PULLUP);
+  debouncer.interval(25);
 }
 
 void loop() {
-  // Lire la valeur du potentiomètre
-  digitalWrite(9, HIGH); // Allumage led ROUGE
-  
+  debouncer.update();
+
   int sensorValue = analogRead(potentiometerPin);
-  sensorValue = constrain(sensorValue, 0, 1022); // Contrainte pour éviter les valeurs extrêmes
+  sensorValue = constrain(sensorValue, 0, 1022);
+  currentBase = map(sensorValue, 0, 1023, 0, 6);
 
-  // Sélectionner la base de données en fonction de la valeur du potentiomètre
   if (!selectionValidee) {
-    currentBase = map(sensorValue, 0, 1023, 0, 6); // 7 bases, donc de 0 à 6
-    delay(10); // Petit delai pour éviter que l'écran ne sature
-    lcd.clear();
-    lcd.setCursor(0, 0);
-    lcd.print("Mode de jeu : ");
-    lcd.print(currentBase + 1);  // Affiche la base sélectionnée
+    if (currentBase != lastBase) {
+      lcd.setCursor(0, 0);
+      lcd.print("Mode de jeu :    ");
+      lcd.setCursor(13, 0);
+      lcd.print(currentBase + 1);
+      lastBase = currentBase;
+    }
+
+    if (debouncer.fell()) {
+      selectionValidee = true;
+      lcd.setCursor(0, 1);
+      lcd.print("                ");  // Effacer la ligne avant affichage
+      lcd.setCursor(0, 1);
+      lcd.print("Base validee!");
+
+      digitalWrite(ledRouge, LOW);
+      digitalWrite(ledVerte, HIGH);
+      delay(300);
+      digitalWrite(ledVerte, LOW);
+      digitalWrite(ledRouge, HIGH);
+
+      Serial.println(currentBase);
+      Serial.println("READY");
+    }
   }
 
-  // Vérifier si le bouton est pressé pour valider la sélection
-  if (digitalRead(buttonPin) == LOW) {
-    selectionValidee = true;
-    lcd.setCursor(0, 1);
-    lcd.print("Base validee!");
-    digitalWrite(9, LOW); // LED ROUGE
-    digitalWrite(7, HIGH); // Allumer la led verte
-    delay(500);  // Petit délai pour éviter les rebonds
-
-    // Envoyer la sélection au script Python
-    Serial.print(currentBase);
-    delay(2000);  // Attendre avant de commencer à lire les phrases
-    digitalWrite(7, LOW); // Eteindre la led verte
-    digitalWrite(9, HIGH); // LED ROUGE
-  }
-
-  // Lire et afficher la phrase reçue sur le LCD
   if (selectionValidee && Serial.available() > 0) {
-    lcd.clear();
-    digitalWrite(9, LOW); // LED ROUGE
-    digitalWrite(6, HIGH); // Allumage led orange processing
     String receivedText = "";
+    digitalWrite(ledRouge, LOW);
+    digitalWrite(ledOrange, HIGH);  // LED orange allumée pendant traitement
+
     while (Serial.available() > 0) {
       char c = Serial.read();
-      receivedText += c;
-      delay(10);  // Petit délai pour assurer la réception complète
+      // Ne garder que les caractères imprimables ASCII (32 à 126)
+      if (c >= 32 && c <= 126) {
+        receivedText += c;
+      }
+      delay(2);
     }
+
+    Serial.print("DEBUG RX: [");
+    Serial.print(receivedText);
+    Serial.println("]");
+
+    lcd.clear();
     scrollText(receivedText);
 
-    // Réinitialiser la sélection après avoir affiché la phrase
+    Serial.println("DONE");
     selectionValidee = false;
-    delay(1000);  // Attendre un peu avant de permettre une nouvelle sélection
-    digitalWrite(6, LOW); // fin led orange
-    digitalWrite(9, HIGH); // LED ROUGE
+    digitalWrite(ledOrange, LOW);  // Extinction LED orange
+    digitalWrite(ledRouge, HIGH);
+    lastBase = -1;
   }
 }
 
