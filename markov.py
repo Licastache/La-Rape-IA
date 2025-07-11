@@ -5,7 +5,7 @@ import sys
 import unicodedata
 import re
 
-PORT_SERIE = 'COM4'  # Adapte selon ton système (ex: /dev/ttyUSB0 sous Linux)
+PORT_SERIE = '/dev/ttyUSB0'  # Adapte selon ton système (ex: /dev/ttyUSB0 sous Linux)
 BAUD_RATE = 9600
 TIMEOUT = 60  # Timeout de lecture série en secondes
 
