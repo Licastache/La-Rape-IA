@@ -4,8 +4,8 @@ import markovify
 import sys
 import unicodedata
 import re
+import glob
 
-PORT_SERIE = '/dev/ttyUSB0'  # Adapte selon ton système (ex: /dev/ttyUSB0 sous Linux)
 BAUD_RATE = 9600
 TIMEOUT = 60  # Timeout de lecture série en secondes
 
@@ -18,16 +18,9 @@ bases_de_donnees = [
     "aleatoire.txt"
 ]
 
-
 def retirer_accents(texte):
-    # Normalize la chaîne en décomposant les caractères accentués
     texte_normalise = unicodedata.normalize('NFD', texte)
-    # Filtrer les caractères qui ne sont pas des marques diacritiques (accents)
-    texte_sans_accents = ''.join(
-        c for c in texte_normalise
-        if unicodedata.category(c) != 'Mn'
-    )
-    return texte_sans_accents
+    return ''.join(c for c in texte_normalise if unicodedata.category(c) != 'Mn')
 
 def charger_donnees(chemin):
     try:
@@ -63,9 +56,21 @@ def attendre_message(ser, attendu, timeout=TIMEOUT):
     print(f"[ERREUR] Timeout : pas de '{attendu}' reçu.")
     return False
 
+def detecter_port_serie():
+    ports_possibles = glob.glob("/dev/ttyACM*") + glob.glob("/dev/ttyUSB*")
+    if not ports_possibles:
+        print("[ERREUR] Aucun port série détecté (ttyACM* ou ttyUSB*).")
+        return None
+    print(f"[INFO] Port série détecté : {ports_possibles[0]}")
+    return ports_possibles[0]
+
 def main():
+    port_serie = detecter_port_serie()
+    if port_serie is None:
+        sys.exit(1)
+
     try:
-        ser = serial.Serial(PORT_SERIE, BAUD_RATE, timeout=1)
+        ser = serial.Serial(port_serie, BAUD_RATE, timeout=1)
         ser.flush()
         print("[OK] Connexion série établie.")
     except serial.SerialException as e:
@@ -84,7 +89,6 @@ def main():
 
                     print(f"[→] Index reçu : {base_index}")
 
-                    # On attend le READY de l'Arduino avant d'envoyer la phrase
                     if attendre_message(ser, "READY"):
                         texte = charger_donnees(bases_de_donnees[base_index])
                         phrase = generer_phrase(texte)
@@ -94,7 +98,6 @@ def main():
                             print(f"[→] Phrase envoyée : {phrase}")
                             ser.write((phrase + "\n").encode('utf-8'))
 
-                            # On attend que l'Arduino confirme la réception avec DONE
                             if attendre_message(ser, "DONE"):
                                 print("[✓] Phrase affichée.")
                         else:
