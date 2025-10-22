@@ -1,4 +1,15 @@
-Bienvenue au tutoriel du fonctionnement de la râpe IA Markov 2000 !  
+Bienvenue au tutoriel du fonctionnement de la râpe IA Markov 2000 ! 
+
+Informations importantes : 
+
+- 1 : ce projet est une réinterprétation du projet "Trouble Maker" de @liangyq404 :
+
+- 2 : Ce README n'est pas encore tout à fait à jour. Nous conseillons au lecteur de faire attention à l'étape de configuration de l'ordinateur (dans l'étape 3), qui est issue de la première contribution de @VianneyDubourg, avant la mise à jour du code de @nopalpite et l'intégration dans le raspberry pi à la place de l'ordinateur
+
+https://github.com/liangyq404/trouble_maker
+
+https://yibo-fu.com/TroubleMaker
+
 
 Pour commencer, nous allons parler de la fabrication de la râpe. Ensuite, nous verrons comment préparer et contrôler l'ordinateur et, pour finir, je vous montrerai comment la faire fonctionner.  
 
@@ -18,7 +29,8 @@ Avant de commencer, voici la liste du matériel dont vous aurez besoin pour cré
 - 12 boulons et écrous M3x30  
 - 1 plaque de plexiglas blanc de 4 mm (50x80 cm)  
 - 1 bombe de peinture acrylique mate noire  
-- 1 tube en acier de 5 mm de diamètre intérieur  
+- 1 tube en acier de 5 mm de diamètre intérieur
+- 1 raspberry pi
 
 ---
 
