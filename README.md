@@ -32,7 +32,7 @@ Avant de commencer, voici la liste du matériel dont vous aurez besoin pour cré
 
 ÉTAPE 2 : Découpe laser du carénage  
 
-Pour cette étape, nous allons utiliser une découpeuse laser. Prenez votre plaque de PMMA de 4 mm et lancez la découpe du fichier "lefichier.SVG".  
+Pour cette étape, nous allons utiliser une découpeuse laser. Prenez votre plaque de PMMA de 4 mm (ou trolase noir/blanc) et lancez la découpe du fichier "Plaque de trolase habillage rape v3.SVG".  
 
 ---
 
@@ -43,7 +43,7 @@ Pour cette étape, nous allons utiliser une découpeuse laser. Prenez votre plaq
 3. Utilisez les boulons et écrous M3x30 pour fixer le carénage.  
 
 ---
-
+------------  ETAPE A CORRIGER -----------------
 Ensuite, nous allons voir comment configurer l'ordinateur.  
 
 Logiciels requis  
